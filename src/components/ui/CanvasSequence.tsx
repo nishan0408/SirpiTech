@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useScroll, useMotionValueEvent } from "framer-motion";
+import { useScroll, useMotionValueEvent, MotionValue } from "framer-motion";
 
 interface CanvasSequenceProps {
   frameCount: number;
@@ -85,7 +85,7 @@ export default function CanvasSequence({ frameCount = 300, progress, className }
 
 
 
-  useMotionValueEvent(activeProgress, "change", (latest) => {
+  useMotionValueEvent(activeProgress, "change", (latest: number) => {
     if (!isLoaded || images.length === 0 || !canvasRef.current) return;
     
     const frameIndex = Math.min(

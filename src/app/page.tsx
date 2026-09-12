@@ -27,7 +27,7 @@ export default function Home() {
   if (!mounted) return null;
 
   return (
-    <ReactLenis root options={{ lerp: 0.1, duration: 1.5, smoothWheel: true, smoothTouch: true }}>
+    <ReactLenis root options={{ lerp: 0.1, duration: 1.5, smoothWheel: true }}>
       <main className="relative min-h-screen selection:bg-primary selection:text-white">
         <CustomCursor />
         <ScrollProgress />
